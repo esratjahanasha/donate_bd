@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog page</title>
+
+    <!-- daisy ui link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- google font link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- tailwind link -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body class="font-[lexend]">
+    <header>
+      <nav class="bg-[#F9F7F3] mb-10 flex justify-center">
+        <div class="w-[79.17%] py-5">
+          <ol class="flex justify-between items-center text-xl">
+            <li class="font-semibold">
+              <a class="bg-[#B4F461] px-8 py-3 rounded-lg" href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li class="flex items-center gap-4">
+              <div class="w-12 h-12">
+                <img
+                  class="w-full h-full"
+                  src="./assets/logo.png"
+                  alt="logo image"
+                />
+              </div>
+              <span class="font-semibold">Donate Bangladesh</span>
+            </li>
+            <li class="items-center flex gap-3">
+              <div>
+                <img class="w-7 h-7" src="./assets/coin.png" alt="coin-image" />
+              </div>
+              <span class="font-light">10000 BDT</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+    </header>
+
+    <main class="w-[79.17%] mx-auto mb-10">
+      <h1 class="font-bold text-4xl inline-block mb-10">
+        Important FAQ
+        <img
+          class="inline-block h-10"
+          src="./assets/6318082_about_faq_help_question_icon.svg"
+          alt=""
+        />
+      </h1>
+      <br />
+
+      <!-- accordion section start   -->
+      <div class="join join-vertical bg-base-100 text-2xl w-full">
+        <div
+          class="collapse collapse-arrow join-item border-base-300 border-3 rounded-t-lg"
+        >
+          <input type="radio" name="my-accordion-4" checked="checked" />
+          <div class="collapse-title font-semibold">
+            What is the Document Object Model(DOM)?
+          </div>
+          <div class="collapse-content text-lg">
+            The Document Object Model (DOM) is a programming interface for web
+            documents. It represents the structure of a web page as a tree of
+            objects, where each HTML element is a node.
+            <br />
+            When a web page loads, the browser turns the HTML into the DOM tree.
+            JavaScript can then interact with that tree to read, change, add, or
+            remove elements and content
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border-3">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title font-semibold">
+            How do you select an element from the DOM?
+          </div>
+          <div class="collapse-content text-lg">
+            You can select elements from the DOM using JavaScript DOM methods.
+            Here are the most common ways:<br />
+            const title = document.getElementById("myTitle"); const items =
+            document.getElementsByClassName("menu-item");
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border-3">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title font-semibold">
+            What is event delegation in the context of the DOM, and why is it
+            useful ?
+          </div>
+          <div class="collapse-content text-sm">
+            Event delegation is a technique where a single event listener is
+            added to a parent element instead of adding listeners to multiple
+            child elements. The event then bubbles up from the target element to
+            its ancestors, allowing the parent to “catch” the event.<br /><br />
+
+            <span class="font-bold"> Why is Event Delegation Useful?</span>
+            =Better performance – Fewer event listeners = faster page. = Cleaner
+            code – One listener instead of many. =Dynamic elements supported –
+            Works even for elements added later via JS. = Memory efficient –
+            Uses less memory as fewer listeners are attached.
+          </div>
+        </div>
+        <div
+          class="collapse collapse-arrow join-item border-base-300 border-3 rounded-b-lg"
+        >
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title font-semibold">
+            How do you manipulate an elements attributes and styles using the
+            DOM ?
+          </div>
+          <div class="collapse-content text-sm">
+            element.setAttribute("attributeName", "value");<br />
+            element.getAttribute("attributeName");<br />
+            element.removeAttribute("attributeName");<br />
+
+            img id="myImage" src="old" <br />
+            let img = document.getElementById("myImage");<br />
+
+            // Change the src attribute<br />
+            img.setAttribute("src", "new");<br />
+
+            // Get the current src<br />
+            console.log(img.getAttribute("src"));<br />
+
+            // Remove the src attribute<br />
+            img.removeAttribute("src");<br />
+            p id="text">Hello p <br />
+            let para = document.getElementById("text");<br />
+
+            // Change text color<br />
+            para.style.color = "red";<br />
+
+            // Set background color<br />
+            para.style.backgroundColor = "yellow";<br />
+
+            // Change font size<br />
+            para.style.fontSize = "20px";<br />
+            element.classList.add("active");<br />
+            element.classList.remove("hidden");<br />
+            element.classList.toggle("dark-mode");<br />
+          </div>
+        </div>
+      </div>
+      <!-- accordion section end -->
+    </main>
+
+    <script src="./jsFlies/utilities.js"></script>
+    <!-- <script src="./jsFlies/blog.js"></script> -->
+  </body>
+</html>

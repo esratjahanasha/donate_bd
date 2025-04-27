@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate Bangladesh</title>
+
+    <!-- google font link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- tailwind css link -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body class="font-[lexend]">
+    <!-- header section start-->
+    <header class="mb-8 sticky top-0" id="head">
+      <!-- nav bar start -->
+      <nav class="bg-[#F9F7F3] mb-10 flex justify-center" id="navbar">
+        <div class="navbar w-[79.17%] py-5">
+          <ol class="flex justify-between items-center text-xl">
+            <li class="font-semibold">
+              <a class="bg-[#B4F461] px-8 py-3 rounded-lg" href="./blog.html"
+                >Blog</a
+              >
+            </li>
+            <li class="flex items-center gap-4">
+              <div class="w-12 h-12">
+                <img
+                  class="w-full h-full"
+                  src="./assets/logo.png"
+                  alt="logo image"
+                />
+              </div>
+              <span class="font-semibold">Donate Bangladesh</span>
+            </li>
+            <li class="items-center flex gap-3">
+              <div>
+                <img class="w-7 h-7" src="./assets/coin.png" alt="coin-image" />
+              </div>
+              <span class="font-light" id="total-amnt">10000 BDT</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+      <!-- nav bar end -->
+
+      <!-- hero section start -->
+      <div class="gap-10 flex justify-center text-xl mb-4">
+        <button class="bg-[#B4F461] rounded-lg px-8 py-4 font-semibold">
+          Donation
+        </button>
+        <button class="rounded-lg px-8 py-4 border border-[#111111]/30">
+          History
+        </button>
+      </div>
+      <!-- hero section end -->
+      <hr class="h-[2px] bg-[#111111]/10 border-none" />
+    </header>
+    <!-- header section end -->
+
+    <!-- main section start -->
+    <main class="flex flex-col justify-center mb-9" id="main-tag">
+      <!--card section for donation  -->
+      <section
+        class="mx-auto flex w-[79.17%] border border-[#111111]/10 p-8 gap-8 rounded-2xl items-stretch mb-8 shadow-xl"
+      >
+        <div class="flex-1">
+          <img
+            class="w-full object-cover"
+            src="./assets/noakhali.png"
+            alt="noakhali-flood"
+          />
+        </div>
+
+        <!-- card content start -->
+        <!-- badge stat -->
+        <div class="flex flex-1 flex-col justify-between">
+          <span
+            class="flex w-fit flex-start px-4 py-3 bg-[#111111]/5 gap-2 rounded-lg"
+            ><img class="w-6 h-6" src="./assets/coin.png" alt="coin-image" />
+            <span class="add-amnt">0</span><span> BDT</span>
+          </span>
+          <!-- badge stat end -->
+
+          <!-- description start -->
+          <h2 class="font-bold text-xl">
+            Donate for Flood at Noakhali, Bangladesh
+          </h2>
+          <p class="font-light">
+            The recent floods in Noakhali have caused significant damage to
+            homes infrastructure. Your donation will help provide essential
+            supplies and to those affected by this disaster. Every contribution,
+            big or small, makes difference. Please join us in supporting the
+            relief efforts and making a positive impact on the lives of those in
+            need.
+          </p>
+
+          <!-- donation form start -->
+          <form action="#" method="#" class="flex flex-col">
+            <input
+              type="text"
+              class="font-light px-[18px] py-[16px] rounded-lg border-3 border-[#111111]/10 focus:outline-3 focus:outline-offset-2 focus:outline-[#111111]/30"
+              name="donation_amount"
+              placeholder="write Donation Amount"
+            />
+            <button
+              type="submit"
+              class="text-xl font-semibold rounded-lg mt-6 bg-[#B4F461] px-8 py-4 hover:border hover:border-[#111111]/30"
+            >
+              Donate Now
+            </button>
+          </form>
+          <!-- donation form end -->
+
+          <!-- description end -->
+        </div>
+        <!-- card content end -->
+      </section>
+
+      <!-- card 2 -->
+      <section
+        class="mx-auto flex w-[79.17%] border border-[#111111]/10 p-8 gap-8 rounded-2xl items-stretch mb-8 shadow-xl"
+      >
+        <div class="flex-1">
+          <img
+            class="w-full object-cover"
+            src="./assets/feni.png"
+            alt="noakhali-flood"
+          />
+        </div>
+
+        <!-- card content start -->
+        <!-- badge stat -->
+        <div class="flex flex-1 flex-col justify-between">
+          <span
+            class="flex w-fit flex-start px-4 py-3 bg-[#111111]/5 gap-2 rounded-lg"
+            ><img class="w-6 h-6" src="./assets/coin.png" alt="coin-image" />
+            <span class="add-amnt">0</span> <span>BDT</span>
+          </span>
+          <!-- badge stat end -->
+
+          <!-- description start -->
+          <h2 class="font-bold text-xl" id="card2-t">
+            Donate for Flood at Noakhali, Bangladesh
+          </h2>
+          <p class="font-light" id="description"></p>
+
+          <!-- donation form start -->
+          <form action="#" method="#" class="flex flex-col">
+            <input
+              type="text"
+              class="font-light px-[18px] py-[16px] rounded-lg border-3 border-[#111111]/10 focus:outline-3 focus:outline-offset-2 focus:outline-[#111111]/30"
+              name="donation_amount"
+              placeholder="write Donation Amount"
+            />
+            <button
+              type="submit"
+              class="text-xl font-semibold rounded-lg mt-6 bg-[#B4F461] px-8 py-4"
+            >
+              Donate Now
+            </button>
+          </form>
+          <!-- donation form end -->
+
+          <!-- description end -->
+        </div>
+        <!-- card content end -->
+      </section>
+
+      <!-- card 3 -->
+      <section
+        class="mx-auto flex w-[79.17%] border border-[#111111]/10 p-8 gap-8 rounded-2xl items-stretch mb-8 shadow-xl"
+      >
+        <div class="flex-1">
+          <img
+            class="w-full object-cover"
+            src="./assets/quota-protest.png"
+            alt="noakhali-flood"
+          />
+        </div>
+
+        <!-- card content start -->
+        <!-- badge stat -->
+        <div class="flex flex-1 flex-col justify-between">
+          <span
+            class="flex w-fit flex-start px-4 py-3 bg-[#111111]/5 gap-2 rounded-lg"
+            ><img class="w-6 h-6" src="./assets/coin.png" alt="coin-image" />
+            <span class="add-amnt">0</span><span>BDT</span>
+          </span>
+          <!-- badge stat end -->
+
+          <!-- description start -->
+          <h2 class="font-bold text-xl" id="card3-t"></h2>
+          <p class="font-light" id="description2"></p>
+
+          <!-- donation form start -->
+          <form action="#" method="#" class="flex flex-col">
+            <input
+              type="text"
+              class="font-light px-[18px] py-[16px] rounded-lg border-3 border-[#111111]/10 focus:outline-3 focus:outline-offset-2 focus:outline-[#111111]/30"
+              name="donation_amount"
+              placeholder="write Donation Amount"
+            />
+            <button
+              type="submit"
+              class="text-xl font-semibold rounded-lg mt-6 bg-[#B4F461] px-8 py-4"
+            >
+              Donate Now
+            </button>
+          </form>
+          <!-- donation form end -->
+
+          <!-- description end -->
+        </div>
+        <!-- card content end -->
+      </section>
+      <!-- card section for donation end -->
+    </main>
+    <!-- main section end -->
+
+    <!-- footer start -->
+    <footer>
+      <div class="h-[100px] bg-[#F9F7F3]"></div>
+    </footer>
+    <!-- footer end -->
+
+    <script src="./jsFlies/utilities.js"></script>
+    <script src="./jsFlies/home.js"></script>
+  </body>
+</html>

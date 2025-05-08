@@ -18,5 +18,7 @@ const navb = document.getElementById("navbar");
 document.addEventListener("DOMContentLoaded", function () {
   handlescroll();
 });
+window.addEventListener("load", handlescroll);
+
 window.addEventListener("scroll", handlescroll);
-// window.addEventListener("load", handlescroll);
+//  window.addEventListener("load", handlescroll);

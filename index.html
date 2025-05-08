@@ -15,15 +15,17 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
 
-  <body class="font-[lexend]">
+  <body class="font-[lexend] flex flex-col min-h-screen">
     <!-- header section start-->
-    <header class="mb-8 sticky top-0" id="head">
+    <header class="mb-8 sticky top-0 z-30" id="head">
       <!-- nav bar start -->
-      <nav class="bg-[#F9F7F3] mb-10 flex justify-center" id="navbar">
-        <div class="navbar w-[79.17%] py-5">
+      <nav class="bg-[#F9F7F3] mb-7 flex justify-center" id="navbar">
+        <div class="navbar w-[95%] xl:w-[85%] py-4">
           <ol class="flex justify-between items-center text-xl">
             <li class="font-semibold">
-              <a class="bg-[#B4F461] px-8 py-3 rounded-lg" href="./blog.html"
+              <a
+                class="bg-[#B4F461] px-8 py-3 rounded-lg hover:brightness-105"
+                href="./blog.html"
                 >Blog</a
               >
             </li>
@@ -35,7 +37,9 @@
                   alt="logo image"
                 />
               </div>
-              <span class="font-semibold">Donate Bangladesh</span>
+              <span class="font-semibold hidden md:block"
+                >Donate Bangladesh</span
+              >
             </li>
             <li class="items-center flex gap-3">
               <div>
@@ -50,10 +54,16 @@
 
       <!-- hero section start -->
       <div class="gap-10 flex justify-center text-xl mb-4">
-        <button class="bg-[#B4F461] rounded-lg px-8 py-4 font-semibold">
+        <button
+          class="bg-[#B4F461] rounded-lg px-8 py-4 font-semibold btn hover:brightness-105"
+          id="donate-btn"
+        >
           Donation
         </button>
-        <button class="rounded-lg px-8 py-4 border border-[#111111]/30">
+        <button
+          class="rounded-lg px-8 py-4 border border-[#111111]/30 btn hover:brightness-105"
+          id="history-btn"
+        >
           History
         </button>
       </div>
@@ -63,170 +73,210 @@
     <!-- header section end -->
 
     <!-- main section start -->
-    <main class="flex flex-col justify-center mb-9" id="main-tag">
-      <!--card section for donation  -->
-      <section
-        class="mx-auto flex w-[79.17%] border border-[#111111]/10 p-8 gap-8 rounded-2xl items-stretch mb-8 shadow-xl"
-      >
-        <div class="flex-1">
-          <img
-            class="w-full object-cover"
-            src="./assets/noakhali.png"
-            alt="noakhali-flood"
-          />
-        </div>
-
-        <!-- card content start -->
-        <!-- badge stat -->
-        <div class="flex flex-1 flex-col justify-between">
-          <span
-            class="flex w-fit flex-start px-4 py-3 bg-[#111111]/5 gap-2 rounded-lg"
-            ><img class="w-6 h-6" src="./assets/coin.png" alt="coin-image" />
-            <span class="add-amnt">0</span><span> BDT</span>
-          </span>
-          <!-- badge stat end -->
-
-          <!-- description start -->
-          <h2 class="font-bold text-xl">
-            Donate for Flood at Noakhali, Bangladesh
-          </h2>
-          <p class="font-light">
-            The recent floods in Noakhali have caused significant damage to
-            homes infrastructure. Your donation will help provide essential
-            supplies and to those affected by this disaster. Every contribution,
-            big or small, makes difference. Please join us in supporting the
-            relief efforts and making a positive impact on the lives of those in
-            need.
-          </p>
-
-          <!-- donation form start -->
-          <form action="#" method="#" class="flex flex-col">
-            <input
-              type="text"
-              class="font-light px-[18px] py-[16px] rounded-lg border-3 border-[#111111]/10 focus:outline-3 focus:outline-offset-2 focus:outline-[#111111]/30"
-              name="donation_amount"
-              placeholder="write Donation Amount"
+    <main class="flex-grow">
+      <div class="flex flex-col justify-center mb-9" id="main-tag">
+        <!--card section for donation  -->
+        <section
+          class="mx-auto flex w-[95%] xl:w-[85%] border border-[#111111]/10 p-4 lg:p-8 gap-4 lg:gap-8 rounded-[16px] items-stretch mb-8 shadow-xl flex-col lg:flex-row"
+        >
+          <div
+            class="lg:flex-1 sm:w-full flex items-center justify-center rounded-[16px]"
+          >
+            <img
+              class="max-w-full max-h-full object-cover lg:h-full sm:w-full rounded-[16px]"
+              src="./assets/noakhali.png"
+              alt="noakhali-flood"
             />
-            <button
-              type="submit"
-              class="text-xl font-semibold rounded-lg mt-6 bg-[#B4F461] px-8 py-4 hover:border hover:border-[#111111]/30"
-            >
-              Donate Now
-            </button>
-          </form>
-          <!-- donation form end -->
+          </div>
 
-          <!-- description end -->
-        </div>
-        <!-- card content end -->
-      </section>
+          <!-- card content start -->
+          <!-- badge stat -->
+          <div class="flex flex-1 flex-col justify-between">
+            <span
+              class="flex w-fit flex-start px-4 py-3 bg-[#111111]/5 gap-2 rounded-lg mb-1"
+              ><img class="w-6 h-6" src="./assets/coin.png" alt="coin-image" />
+              <span class="add-amnt">0</span><span> BDT</span>
+            </span>
+            <!-- badge stat end -->
 
-      <!-- card 2 -->
-      <section
-        class="mx-auto flex w-[79.17%] border border-[#111111]/10 p-8 gap-8 rounded-2xl items-stretch mb-8 shadow-xl"
-      >
-        <div class="flex-1">
-          <img
-            class="w-full object-cover"
-            src="./assets/feni.png"
-            alt="noakhali-flood"
-          />
-        </div>
+            <!-- description start -->
+            <h2 class="font-bold text-xl mb-1">
+              Donate for Flood at Noakhali, Bangladesh
+            </h2>
+            <p class="font-light mb-2">
+              The recent floods in Noakhali have caused significant damage to
+              homes infrastructure. Your donation will help provide essential
+              supplies and to those affected by this disaster. Every
+              contribution, big or small, makes difference. Please join us in
+              supporting the relief efforts and making a positive impact on the
+              lives of those in need.
+            </p>
 
-        <!-- card content start -->
-        <!-- badge stat -->
-        <div class="flex flex-1 flex-col justify-between">
-          <span
-            class="flex w-fit flex-start px-4 py-3 bg-[#111111]/5 gap-2 rounded-lg"
-            ><img class="w-6 h-6" src="./assets/coin.png" alt="coin-image" />
-            <span class="add-amnt">0</span> <span>BDT</span>
-          </span>
-          <!-- badge stat end -->
+            <!-- donation form start -->
+            <form action="#" method="#" class="flex flex-col">
+              <input
+                type="text"
+                class="font-light px-[18px] py-[13px] rounded-lg border-3 border-[#111111]/10 focus:outline-3 focus:outline-offset-2 focus:outline-[#111111]/30"
+                name="donation_amount"
+                placeholder="write Donation Amount"
+              />
+              <button
+                type="submit"
+                class="text-xl font-semibold rounded-lg mt-4 bg-[#B4F461] px-8 py-4 btn hover:brightness-105"
+              >
+                Donate Now
+              </button>
+            </form>
+            <!-- donation form end -->
 
-          <!-- description start -->
-          <h2 class="font-bold text-xl" id="card2-t">
-            Donate for Flood at Noakhali, Bangladesh
-          </h2>
-          <p class="font-light" id="description"></p>
+            <!-- description end -->
+          </div>
+          <!-- card content end -->
+        </section>
 
-          <!-- donation form start -->
-          <form action="#" method="#" class="flex flex-col">
-            <input
-              type="text"
-              class="font-light px-[18px] py-[16px] rounded-lg border-3 border-[#111111]/10 focus:outline-3 focus:outline-offset-2 focus:outline-[#111111]/30"
-              name="donation_amount"
-              placeholder="write Donation Amount"
+        <!-- card 2 -->
+        <section
+          class="mx-auto flex w-[95%] xl:w-[85%] border border-[#111111]/10 p-4 lg:p-8 gap-4 lg:gap-8 rounded-2xl items-stretch mb-8 shadow-xl flex-col lg:flex-row"
+        >
+          <div class="lg:flex-1 sm:w-full flex items-center justify-center">
+            <img
+              class="max-w-full max-h-full object-cover lg:h-full sm:w-full"
+              src="./assets/feni.png"
+              alt="feni-flood"
             />
-            <button
-              type="submit"
-              class="text-xl font-semibold rounded-lg mt-6 bg-[#B4F461] px-8 py-4"
-            >
-              Donate Now
-            </button>
-          </form>
-          <!-- donation form end -->
+          </div>
 
-          <!-- description end -->
-        </div>
-        <!-- card content end -->
-      </section>
+          <!-- card content start -->
+          <!-- badge stat -->
+          <div class="flex flex-1 flex-col justify-between">
+            <span
+              class="flex w-fit flex-start px-4 py-3 bg-[#111111]/5 gap-2 rounded-lg mb-1"
+              ><img class="w-6 h-6" src="./assets/coin.png" alt="coin-image" />
+              <span class="add-amnt">0</span> <span>BDT</span>
+            </span>
+            <!-- badge stat end -->
 
-      <!-- card 3 -->
-      <section
-        class="mx-auto flex w-[79.17%] border border-[#111111]/10 p-8 gap-8 rounded-2xl items-stretch mb-8 shadow-xl"
-      >
-        <div class="flex-1">
-          <img
-            class="w-full object-cover"
-            src="./assets/quota-protest.png"
-            alt="noakhali-flood"
-          />
-        </div>
+            <!-- description start -->
+            <h2 class="font-bold text-xl mb-1" id="card2-t">
+              Donate for Flood at Noakhali, Bangladesh
+            </h2>
+            <p class="font-light mb-2" id="description"></p>
 
-        <!-- card content start -->
-        <!-- badge stat -->
-        <div class="flex flex-1 flex-col justify-between">
-          <span
-            class="flex w-fit flex-start px-4 py-3 bg-[#111111]/5 gap-2 rounded-lg"
-            ><img class="w-6 h-6" src="./assets/coin.png" alt="coin-image" />
-            <span class="add-amnt">0</span><span>BDT</span>
-          </span>
-          <!-- badge stat end -->
+            <!-- donation form start -->
+            <form action="#" method="#" class="flex flex-col">
+              <input
+                type="text"
+                class="font-light px-[18px] py-[16px] rounded-lg border-3 border-[#111111]/10 focus:outline-3 focus:outline-offset-2 focus:outline-[#111111]/30"
+                name="donation_amount"
+                placeholder="write Donation Amount"
+              />
+              <button
+                type="submit"
+                class="text-xl font-semibold rounded-lg mt-6 bg-[#B4F461] px-8 py-4 btn hover:brightness-105"
+              >
+                Donate Now
+              </button>
+            </form>
+            <!-- donation form end -->
 
-          <!-- description start -->
-          <h2 class="font-bold text-xl" id="card3-t"></h2>
-          <p class="font-light" id="description2"></p>
+            <!-- description end -->
+          </div>
+          <!-- card content end -->
+        </section>
 
-          <!-- donation form start -->
-          <form action="#" method="#" class="flex flex-col">
-            <input
-              type="text"
-              class="font-light px-[18px] py-[16px] rounded-lg border-3 border-[#111111]/10 focus:outline-3 focus:outline-offset-2 focus:outline-[#111111]/30"
-              name="donation_amount"
-              placeholder="write Donation Amount"
+        <!-- card 3 -->
+        <section
+          class="mx-auto flex w-[95%] xl:w-[85%] border border-[#111111]/10 p-4 lg:p-8 gap-4 lg:gap-8 rounded-2xl items-stretch mb-8 shadow-xl flex-col lg:flex-row"
+        >
+          <div class="lg:flex-1 sm:w-full flex items-center justify-center">
+            <img
+              class="max-w-full max-h-full object-cover lg:h-full sm:w-full"
+              src="./assets/quota-protest.png"
+              alt="qouta-protest"
             />
-            <button
-              type="submit"
-              class="text-xl font-semibold rounded-lg mt-6 bg-[#B4F461] px-8 py-4"
-            >
-              Donate Now
-            </button>
-          </form>
-          <!-- donation form end -->
+          </div>
 
-          <!-- description end -->
-        </div>
-        <!-- card content end -->
+          <!-- card content start -->
+          <!-- badge stat -->
+          <div class="flex flex-1 flex-col justify-between">
+            <span
+              class="flex w-fit flex-start px-4 py-3 bg-[#111111]/5 gap-2 rounded-lg mb-1"
+              ><img class="w-6 h-6" src="./assets/coin.png" alt="coin-image" />
+              <span class="add-amnt">0</span><span>BDT</span>
+            </span>
+            <!-- badge stat end -->
+
+            <!-- description start -->
+            <h2 class="font-bold text-xl mb-2" id="card3-t"></h2>
+            <p class="font-light" id="description2"></p>
+
+            <!-- donation form start -->
+            <form action="#" method="#" class="flex flex-col">
+              <input
+                type="text"
+                class="font-light px-[18px] py-[16px] rounded-lg border-3 border-[#111111]/10 focus:outline-3 focus:outline-offset-2 focus:outline-[#111111]/30"
+                name="donation_amount"
+                placeholder="write Donation Amount"
+              />
+              <button
+                type="submit"
+                class="text-xl font-semibold rounded-lg mt-6 bg-[#B4F461] px-8 py-4 btn hover:brightness-105"
+              >
+                Donate Now
+              </button>
+            </form>
+            <!-- donation form end -->
+
+            <!-- description end -->
+          </div>
+          <!-- card content end -->
+        </section>
+        <!-- card section for donation end -->
+      </div>
+
+      <!-- history section start -->
+      <section
+        class="mx-auto mb-8 w-[95%] lg:w-[79.17%] hidden"
+        id="historywrapper"
+      >
+        <div class="history-sec w-full"></div>
       </section>
-      <!-- card section for donation end -->
+      <!-- history section end -->
+
+      <!-- confirmation modal start -->
+      <section
+        class="fixed inset-0 bg-black/50 z-40 justify-center items-center hidden"
+        id="confirmationModal"
+      >
+        <div
+          class="text-center w-fit bg-white shadow-lg rounded-xl px-20 py-5 flex flex-col gap-4 z-50"
+        >
+          <h2 class="text-3xl font-bold text-black">Congrats!</h2>
+          <img src="./assets/coin.png" alt="coin" class="mx-auto" />
+
+          <p class="text-gray-600">You Have Donated for Humankind</p>
+          <h3 class="text-lg font-semibold text-slate-900">Successfully</h3>
+          <button
+            onclick="closeModal()"
+            class="text-gray-800 py-2 mx-9 bg-gray-200 rounded hover:bg-gray-300"
+          >
+            close confirmation
+          </button>
+        </div>
+      </section>
+      <!-- confirmation modal end -->
     </main>
     <!-- main section end -->
 
     <!-- footer start -->
     <footer>
-      <div class="h-[100px] bg-[#F9F7F3]"></div>
+      <div class="h-[80px] bg-[#F9F7F3]"></div>
     </footer>
     <!-- footer end -->
+
+    <!-- reload krle ektu jhamela ache -->
+    <!-- button er cursor pointer theke auto auto pointer etay jhamela ache -->
+    <!-- input er age 0 dile ota bad diye history te dekhabe etay jhamela ache -->
 
     <script src="./jsFlies/utilities.js"></script>
     <script src="./jsFlies/home.js"></script>

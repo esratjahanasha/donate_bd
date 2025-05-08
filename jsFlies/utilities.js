@@ -34,19 +34,37 @@ function handlescroll() {
   }
 }
 
-//get the total amount
-const total = document.getElementById("total-amnt").innerText;
-const totalamnt = parseFloat(total);
-
 //money add+ decrease money
 
 const maintag = document.getElementById("main-tag");
 
 //handling button style
 const submitbtn = maintag.querySelectorAll("button[type='submit']");
-submitbtn.forEach(function (btn) {
-  btn.classList.add("cursor-pointer");
-});
+
+const histry = document.querySelector(".history-sec");
+
+//modal
+function showmodal() {
+  document.getElementById("confirmationModal").classList.remove("hidden");
+  document.getElementById("confirmationModal").classList.add("flex");
+  document.body.classList.add("overflow-hidden"); // scroll বন্ধ
+}
+
+function closeModal() {
+  document.getElementById("confirmationModal").classList.remove("flex");
+  document.getElementById("confirmationModal").classList.add("hidden");
+  document.body.classList.remove("overflow-hidden");
+}
+
+document
+  .getElementById("confirmationModal")
+  .addEventListener("click", function (event) {
+    if (event.target === this) {
+      closeModal();
+    }
+  });
+//cursor controled buttons
+const allbuttons = document.querySelectorAll(".btn");
 
 //submiited function
 maintag.addEventListener("submit", function (event) {
@@ -56,18 +74,15 @@ maintag.addEventListener("submit", function (event) {
     return;
   }
 
-  //handling button style
-  // submitbtn.forEach(function (btn) {
-  //   btn.addEventListener("click",function(event){
-  //   btn.classList.remove("cursor-pointer");
-  //   })
-  // });
-
   //value increased
 
   //get the input current value
   const inputfieldd = formm.querySelector("input[name='donation_amount']");
   const inputvalue = inputfieldd.value;
+
+  //get the total amount
+  const total = document.getElementById("total-amnt").innerText;
+  const totalamnt = parseFloat(total);
 
   if (!isNaN(inputvalue) && inputvalue > 0 && inputvalue <= totalamnt) {
     const valuee = parseFloat(inputvalue);
@@ -93,7 +108,98 @@ maintag.addEventListener("submit", function (event) {
 
     const currenttotalamnt = totalamnt - valuee;
     document.getElementById("total-amnt").innerText = currenttotalamnt;
+
+    //history section
+    histry.classList.add("flex", "flex-col", "gap-4");
+    const histryw = document.createElement("div");
+    histryw.classList.add(
+      "border",
+      "border-[#111111]/10",
+      "p-5",
+      "rounded-2xl",
+      "w-full",
+      "flex",
+      "flex-col",
+      "gap-3"
+    );
+
+    const cardt = parentSec.querySelector("h2").innerText;
+
+    const historyt = document.createElement("h2");
+    const dateP = document.createElement("p");
+    dateP.classList.add("text-gray-500");
+
+    historyt.classList.add("font-bold", "text-xl");
+    historyt.innerText = `${inputvalue} Taka is donated for ${cardt}`;
+
+    const currentDatetime = new Date();
+    dateP.innerText = currentDatetime;
+    histryw.appendChild(historyt);
+    histryw.appendChild(dateP);
+
+    histry.appendChild(histryw);
+
+    showmodal();
   } else {
     alert("please enter a valid amount");
+    inputfieldd.value = "";
   }
+});
+
+//tabing
+const hstryBtn = document.getElementById("history-btn");
+const donateBtn = document.getElementById("donate-btn");
+const wrapper = document.getElementById("historywrapper");
+
+//cursor controled buttons
+// const allbuttons = document.querySelectorAll(".btn");
+
+function cursorControl(button) {
+  button.addEventListener("mouseenter", function () {
+    button.classList.remove("cursor-auto");
+    button.classList.add("cursor-pointer");
+  });
+
+  button.addEventListener("click", function () {
+    button.dataset.clicked = "true";
+    button.classList.add("cursor-auto");
+    button.classList.remove("cursor-pointer");
+  });
+
+  button.addEventListener("mouseleave", function () {
+    if (button.dataset.clicked === "true") {
+      button.classList.add("cursor-auto");
+      button.classList.remove("cursor-pointer");
+    }
+  });
+}
+
+allbuttons.forEach(function (button) {
+  cursorControl(button);
+  button.classList.add(
+    "transition",
+    "ease-in-out",
+    "duration-200",
+    "active:scale-95"
+  );
+});
+
+hstryBtn.addEventListener("click", function () {
+  hstryBtn.classList.add("bg-[#B4F461]", "font-semibold");
+  hstryBtn.classList.remove("border", "border-[#111111]/30");
+  donateBtn.classList.add("border", "border-[#111111]/30");
+  donateBtn.classList.remove("bg-[#B4F461]", "font-semibold");
+
+  wrapper.classList.remove("hidden");
+  maintag.classList.add("hidden");
+});
+
+donateBtn.addEventListener("click", function () {
+  hstryBtn.classList.remove("bg-[#B4F461]", "font-semibold");
+  hstryBtn.classList.add("border", "border-[#111111]/30");
+  donateBtn.classList.remove("border", "border-[#111111]/30");
+  donateBtn.classList.add("bg-[#B4F461]", "font-semibold");
+
+  wrapper.classList.add("hidden");
+  maintag.classList.remove("hidden");
 });
